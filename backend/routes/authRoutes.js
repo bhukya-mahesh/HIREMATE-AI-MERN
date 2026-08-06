@@ -1,55 +1,47 @@
 import express from "express";
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
+import  protect  from "../middleware/auth.js";
+import uploadResume from "../middleware/uploadResume.js";
+
+import {
+    signup,
+    login,
+    getProfile,
+    updateRoadmapTask,
+} from "../controllers/authController.js";
 
 const router = express.Router();
 
-const generateToken = (id) =>
-  jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "30d" });
+router.post("/signup", signup);
+router.post("/login", login);
 
+router.get("/profile", protect, getProfile);
 
-router.post("/signup", async (req, res) => {
-  try {
-    const { name, email, password } = req.body;
-    if (!name || !email || !password) {
-      return res.status(400).json({ message: "All fields are required" });
-    }
-
-    const existing = await User.findOne({ email });
-    if (existing) return res.status(400).json({ message: "Email already registered" });
-
-    const user = await User.create({ name, email, password });
-
-    res.status(201).json({
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-      token: generateToken(user._id)
-    });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
+router.patch("/roadmap-task", protect, updateRoadmapTask);
+router.patch("/skills", protect, async (req, res) => {
+  const { skills } = req.body;
+  if (!Array.isArray(skills)) {
+    return res.status(400).json({ message: "skills must be an array of strings" });
   }
+  const user = await User.findById(req.user._id);
+  user.skillProfile.known = skills;
+  await user.save();
+  res.json(user.skillProfile);
 });
 
 
-router.post("/login", async (req, res) => {
-  try {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
+router.post("/resume", protect, uploadResume.single("resume"), async (req, res) => {
+  if (!req.file) return res.status(400).json({ message: "Resume PDF is required (field name: resume)" });
 
-    if (user && (await user.matchPassword(password))) {
-      res.json({
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        token: generateToken(user._id)
-      });
-    } else {
-      res.status(401).json({ message: "Invalid email or password" });
-    }
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
+  const user = await User.findById(req.user._id);
+  user.resume = {
+    filename: req.file.originalname,
+    path: `/uploads/resumes/${req.file.filename}`,
+    uploadedAt: new Date()
+  };
+  await user.save();
+  res.json(user.resume);
 });
 
 export default router;

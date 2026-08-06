@@ -1,20 +1,23 @@
+import "dotenv/config";
 import express from "express";
-import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import applicationRoutes from "./routes/applicationRoutes.js";
+import aiRoutes from "./routes/aiRoutes.js";
 import { startReminderCron } from "./utils/reminderCron.js";
 
-dotenv.config();
 connectDB();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use("/uploads", express.static("uploads"));
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/applications", applicationRoutes);
+app.use("/api/ai", aiRoutes);
 
 app.get("/", (req, res) => res.send("PlacementPilot API is running"));
 

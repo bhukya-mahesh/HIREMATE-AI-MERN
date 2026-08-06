@@ -22,6 +22,7 @@ export default function ApplicationCard({
   app,
   onMarkApplied,
   onDelete,
+  onAnalyze,
 }) {
   const daysLeft = getDaysLeft(app.deadline);
 
@@ -92,6 +93,13 @@ export default function ApplicationCard({
             Mark Applied
           </button>
         )}
+
+        <button
+          onClick={() => onAnalyze(app)}
+          className="flex-1 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition"
+        >
+          JD Analyser
+        </button>
 
         <button
           onClick={() => onDelete(app._id)}
