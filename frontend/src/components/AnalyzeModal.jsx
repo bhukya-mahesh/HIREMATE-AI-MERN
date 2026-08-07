@@ -115,193 +115,107 @@ export default function AnalyzeModal({ app, onClose, onUpdated }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/60 flex justify-center items-center z-50 p-6">
-
-      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-3xl overflow-hidden">
-
-        {/* Header */}
-
-        <div className="bg-gradient-to-r from-slate-900 to-slate-700 text-white p-6">
-
-          <h2 className="text-2xl font-bold">
-             HireMate AI
-          </h2>
-
-          <p className="text-slate-300 mt-1">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-6">
+      <div className="w-full max-w-3xl overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-2xl">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-500 p-6 text-white">
+          <h2 className="text-2xl font-semibold">HireMate AI</h2>
+          <p className="mt-1 text-sm text-blue-100">
             {app.company}
             {app.role && ` • ${app.role}`}
           </p>
-
         </div>
 
-        {/* Body */}
-
-        <div className="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
-
-          {/* STEP 1 */}
-
-          <div className="border rounded-2xl p-5">
-
-            <h3 className="font-semibold text-lg">
-               Step 1 • Job Description
-            </h3>
-
-            <p className="text-sm text-gray-500 mt-1">
-              Upload the company's JD PDF.
-            </p>
+        <div className="max-h-[70vh] space-y-5 overflow-y-auto p-6">
+          <div className="rounded-2xl border border-gray-200 p-5">
+            <h3 className="text-lg font-semibold text-gray-800">Step 1 • Job Description</h3>
+            <p className="mt-1 text-sm text-gray-500">Upload the company&apos;s JD PDF.</p>
 
             <input
               type="file"
               accept="application/pdf"
-              onChange={(e) =>
-                setJdFile(e.target.files[0])
-              }
-              className="mt-4"
+              onChange={(e) => setJdFile(e.target.files[0])}
+              className="mt-4 text-sm text-gray-700"
             />
 
             <button
               disabled={busy || !jdFile}
               onClick={uploadJD}
-              className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl disabled:opacity-40"
+              className="mt-4 rounded-xl bg-blue-600 px-5 py-2 text-sm font-medium text-white transition hover:bg-blue-700 disabled:opacity-40"
             >
               Analyze JD
             </button>
-
           </div>
 
-          {/* STEP 2 */}
-
-          <div className="border rounded-2xl p-5">
-
-            <h3 className="font-semibold text-lg">
-               Step 2 • Resume Analysis
-            </h3>
-
-            <p className="text-sm text-gray-500 mt-1">
-              Upload your latest Resume.
-            </p>
+          <div className="rounded-2xl border border-gray-200 p-5">
+            <h3 className="text-lg font-semibold text-gray-800">Step 2 • Resume Analysis</h3>
+            <p className="mt-1 text-sm text-gray-500">Upload your latest resume.</p>
 
             <input
               type="file"
               accept="application/pdf"
-              onChange={(e) =>
-                setResumeFile(
-                  e.target.files[0]
-                )
-              }
-              className="mt-4"
+              onChange={(e) => setResumeFile(e.target.files[0])}
+              className="mt-4 text-sm text-gray-700"
             />
 
             <button
               disabled={busy || !resumeFile}
               onClick={uploadResume}
-              className="mt-4 bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-xl disabled:opacity-40"
+              className="mt-4 rounded-xl bg-green-600 px-5 py-2 text-sm font-medium text-white transition hover:bg-green-700 disabled:opacity-40"
             >
               Analyze Resume
             </button>
-
           </div>
 
-          {/* STEP 3 */}
-
-          <div className="border rounded-2xl p-5">
-
-            <h3 className="font-semibold text-lg">
-               Step 3 • AI Roadmap
-            </h3>
-
-            <p className="text-sm text-gray-500 mt-1">
-              Generate a personalized study plan.
-            </p>
+          <div className="rounded-2xl border border-gray-200 p-5">
+            <h3 className="text-lg font-semibold text-gray-800">Step 3 • AI Roadmap</h3>
+            <p className="mt-1 text-sm text-gray-500">Generate a personalized study plan.</p>
 
             <button
               disabled={busy}
               onClick={generateRoadmap}
-              className="mt-4 bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded-xl disabled:opacity-40"
+              className="mt-4 rounded-xl bg-purple-600 px-5 py-2 text-sm font-medium text-white transition hover:bg-purple-700 disabled:opacity-40"
             >
               Generate Roadmap
             </button>
-
           </div>
 
-          {/* AI STATUS */}
-
           {status && (
-            <div className="bg-slate-100 rounded-xl p-4 border-l-4 border-blue-600">
-
-              <p className="text-sm text-slate-700">
-                {status}
-              </p>
-
+            <div className="rounded-xl border-l-4 border-blue-600 bg-blue-50 p-4">
+              <p className="text-sm text-slate-700">{status}</p>
             </div>
           )}
-
-          {/* Roadmap */}
 
           {roadmap.length > 0 && (
-
             <div>
-
-              <h3 className="font-bold text-lg mb-4">
-                 7-Day Roadmap
-              </h3>
-
+              <h3 className="mb-4 text-lg font-semibold text-gray-800">7-Day Roadmap</h3>
               <div className="space-y-3">
-
                 {roadmap.map((day) => (
-
-                  <div
-                    key={day.day}
-                    className="border rounded-xl p-4 bg-gray-50"
-                  >
-
-                    <h4 className="font-semibold">
-
+                  <div key={day.day} className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                    <h4 className="font-semibold text-gray-800">
                       Day {day.day} • {day.topic}
-
                     </h4>
 
-                    <ul className="mt-2 text-sm text-gray-600 list-disc list-inside">
-
-                      {day.tasks?.map(
-                        (task, index) => (
-
-                          <li key={index}>
-                            {task}
-                          </li>
-
-                        )
-                      )}
-
+                    <ul className="mt-2 list-inside list-disc text-sm text-gray-600">
+                      {day.tasks?.map((task, index) => (
+                        <li key={index}>{task}</li>
+                      ))}
                     </ul>
-
                   </div>
-
                 ))}
-
               </div>
-
             </div>
-
           )}
-
         </div>
 
-        {/* Footer */}
-
-        <div className="border-t p-5 flex justify-end">
-
+        <div className="flex justify-end border-t border-gray-200 p-5">
           <button
             onClick={onClose}
-            className="px-6 py-2 rounded-xl border hover:bg-gray-100"
+            className="rounded-xl border border-gray-300 px-6 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
           >
             Close
           </button>
-
         </div>
-
       </div>
-
     </div>
   );
 }

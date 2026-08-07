@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Sparkles } from "lucide-react";
 import api from "../api/axios.js";
 
 export default function MentorBanner() {
@@ -10,9 +11,9 @@ export default function MentorBanner() {
       try {
         const { data } = await api.get("/ai/mentor-message");
         setMessage(data.message);
-      } catch (err) {
+      } catch {
         setMessage(
-          "Welcome back! Keep your placement journey moving. Check your upcoming deadlines and complete today's tasks."
+          "Welcome back! Stay consistent with your placement preparation. Complete today's tasks and keep your streak alive."
         );
       } finally {
         setLoading(false);
@@ -24,68 +25,45 @@ export default function MentorBanner() {
 
   if (loading) {
     return (
-      <div className="bg-white rounded-2xl shadow-sm border p-6 mb-8 animate-pulse">
-        <div className="flex items-center gap-4">
-          <div className="w-14 h-14 rounded-full bg-gray-200"></div>
-
-          <div className="flex-1">
-            <div className="h-4 bg-gray-200 rounded w-40 mb-3"></div>
-            <div className="h-3 bg-gray-200 rounded w-full mb-2"></div>
-            <div className="h-3 bg-gray-200 rounded w-5/6"></div>
-          </div>
-        </div>
+      <div className="bg-white rounded-xl border border-gray-200 p-6 animate-pulse">
+        <div className="h-5 w-44 bg-gray-200 rounded mb-4"></div>
+        <div className="h-4 bg-gray-200 rounded mb-2"></div>
+        <div className="h-4 w-5/6 bg-gray-200 rounded"></div>
       </div>
     );
   }
 
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-lg p-6 mb-8 text-white border border-slate-700">
+    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-6 text-white shadow-sm">
 
-      <div className="flex items-start gap-5">
+      <div className="flex items-center gap-3">
 
-        <div className="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center text-3xl shadow-lg">
-          🤖
+        <div className="w-11 h-11 rounded-lg bg-white/20 flex items-center justify-center">
+          <Sparkles size={22} />
         </div>
 
-        <div className="flex-1">
-
-          <div className="flex items-center justify-between flex-wrap gap-3">
-
-            <div>
-              <h2 className="text-xl font-bold">
-                HireMate AI Mentor
-              </h2>
-
-              <p className="text-sm text-slate-300 mt-1">
-                Your Personal Placement Coach
-              </p>
-            </div>
-
-            <span className="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-xs font-semibold border border-green-400/20">
-              ● Live
-            </span>
-
-          </div>
-
-          <div className="mt-5 bg-white/10 rounded-xl p-4 border border-white/10">
-            <p className="leading-7 text-slate-100">
-              {message}
-            </p>
-          </div>
-
-          <div className="mt-4 flex items-center justify-between text-xs text-slate-400">
-
-            <span>
-              Updated just now
-            </span>
-
-            <span>
-              Powered by Gemini AI
-            </span>
-
-          </div>
-
+        <div>
+          <h2 className="text-lg font-semibold">
+            HireMate AI Mentor
+          </h2>
+          <p className="text-sm text-blue-100">
+            Personalized guidance for your placement journey
+          </p>
         </div>
+
+      </div>
+
+      <div className="mt-5 bg-white/10 rounded-lg p-4">
+        <p className="leading-7 text-sm">
+          {message}
+        </p>
+      </div>
+
+      <div className="mt-4 flex justify-between items-center text-xs text-blue-100">
+
+        <span>Updated just now</span>
+
+        <span>Gemini AI</span>
 
       </div>
 

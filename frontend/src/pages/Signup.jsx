@@ -44,16 +44,69 @@ export default function Signup() {
 
         {/* Left Section */}
 
-        <div className="hidden md:flex bg-blue-600 text-white p-10 flex-col justify-center">
-          <h1 className="text-4xl font-bold">
-            HireMate
-          </h1>
+       {/* Left Section */}
 
-          <p className="mt-5 text-blue-100 leading-7">
-            Create your account and start tracking every placement
-            application, deadline, and interview in one place.
-          </p>
-        </div>
+<div className="hidden md:flex bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white p-12 flex-col justify-center">
+
+  <h1 className="text-4xl font-bold">
+    HireMate AI
+  </h1>
+
+  <p className="mt-5 text-blue-100 leading-7 text-lg">
+    Your AI-powered placement companion that helps you prepare,
+    learn, and land your dream job with confidence.
+  </p>
+
+  <div className="mt-10 space-y-5">
+
+    <div className="flex items-center gap-3">
+      <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-sm font-bold">
+        ✓
+      </div>
+      <span className="text-base">
+        AI Resume & JD Analysis
+      </span>
+    </div>
+
+    <div className="flex items-center gap-3">
+      <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-sm font-bold">
+        ✓
+      </div>
+      <span className="text-base">
+        Personalized Preparation Roadmaps
+      </span>
+    </div>
+
+    <div className="flex items-center gap-3">
+      <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-sm font-bold">
+        ✓
+      </div>
+      <span className="text-base">
+        AI Study Tutor with RAG
+      </span>
+    </div>
+
+    <div className="flex items-center gap-3">
+      <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-sm font-bold">
+        ✓
+      </div>
+      <span className="text-base">
+        Daily Tests & Progress Tracking
+      </span>
+    </div>
+
+    <div className="flex items-center gap-3">
+      <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-sm font-bold">
+        ✓
+      </div>
+      <span className="text-base">
+        Job Application & Interview Tracker
+      </span>
+    </div>
+
+  </div>
+
+</div>
 
         {/* Right Section */}
 
