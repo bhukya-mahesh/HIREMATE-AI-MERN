@@ -149,6 +149,10 @@ Key backend endpoints include:
 
 This project is currently in development. Core functionality is implemented and working at a prototype level, but the app is still being refined for stability, polish, and broader feature completeness. Some features may evolve as the product matures.
 
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
 ## Next steps
 
 Suggested improvements include:
