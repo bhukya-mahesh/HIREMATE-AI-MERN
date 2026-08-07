@@ -5,6 +5,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import applicationRoutes from "./routes/applicationRoutes.js";
 import aiRoutes from "./routes/aiRoutes.js";
+import studyRoutes from "./routes/studyRoutes.js";
 import { startReminderCron } from "./utils/reminderCron.js";
 
 connectDB();
@@ -18,6 +19,7 @@ app.use("/uploads", express.static("uploads"));
 app.use("/api/auth", authRoutes);
 app.use("/api/applications", applicationRoutes);
 app.use("/api/ai", aiRoutes);
+app.use("/api/study", studyRoutes);
 
 app.get("/", (req, res) => res.send("HireMate API is running..."));
 

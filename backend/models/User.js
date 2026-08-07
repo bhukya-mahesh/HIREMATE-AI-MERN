@@ -38,7 +38,7 @@ resume: {
   uploadedAt: { type: Date }
 },
 
-    // AI Skill Profile
+    // Skill Profile
     skillProfile: {
       known: [
         {
