@@ -1,6 +1,10 @@
 # HireMate
 
-HireMate is a MERN-based placement preparation platform designed to help students track job applications, analyze resumes against job descriptions, generate personalized preparation roadmaps, and study from uploaded books with AI assistance. The project is currently in active development and is being iterated toward a more complete end-to-end experience.
+HireMate is a MERN-based placement preparation platform that helps students manage job applications, optimize resumes, prepare for interviews, and learn from uploaded books using AI-powered insights. The platform combines application tracking, intelligent resume and job description analysis, personalized preparation plans, and study assistance into one student-friendly experience.
+
+## Live Demo
+
+- Web app: https://hiremate-ai-mern-bssg.vercel.app/
 
 ## Live Backend
 
@@ -11,12 +15,20 @@ HireMate is a MERN-based placement preparation platform designed to help student
 
 ### Core features
 - User authentication with signup, login, and protected routes
-- Application tracking dashboard for job applications and statuses
-- Profile management with resume upload and skill tracking
-- AI-powered JD analysis and resume matching
-- Personalized 7-day preparation roadmap generation
-- AI mentor guidance based on application progress
-- Study module for uploading books and asking AI questions from book content
+- Application tracking dashboard for job applications, stages, and interview notes
+- Profile management with resume upload, skills, and role-specific metadata
+- AI-powered job description analysis to identify key skills and fit
+- Resume matching and feedback for stronger application positioning
+- Personalized 7-day preparation roadmap with task suggestions and progress cues
+- AI mentor guidance with preparation advice and interview readiness prompts
+- Study module for uploading books and asking AI questions based on the book content
+- PDF handling for resumes, job descriptions, and study materials
+
+### Why HireMate?
+- Designed for students and early-career professionals preparing for placements
+- Centralizes application tracking, preparation planning, and learning support
+- Uses AI to reduce manual resume review and job matching guesswork
+- Helps keep preparation organized across applications, interviews, and study goals
 
 ### Tech stack
 - Frontend: React, Vite, Tailwind CSS, React Router, Axios
