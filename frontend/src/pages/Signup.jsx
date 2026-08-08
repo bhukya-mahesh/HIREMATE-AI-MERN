@@ -7,6 +7,8 @@ export default function Signup() {
     name: "",
     email: "",
     password: "",
+    branch: "",
+    semester: "",
   });
 
   const [error, setError] = useState("");
@@ -26,7 +28,12 @@ export default function Signup() {
     setError("");
 
     try {
-      const { data } = await api.post("/auth/signup", form);
+      const payload = {
+        ...form,
+        semester: form.semester ? Number(form.semester) : undefined,
+      };
+
+      const { data } = await api.post("/auth/signup", payload);
 
       localStorage.setItem("token", data.token);
       localStorage.setItem("name", data.name);
@@ -42,11 +49,7 @@ export default function Signup() {
 
       <div className="w-full max-w-5xl bg-white rounded-2xl shadow-lg overflow-hidden grid md:grid-cols-2">
 
-        {/* Left Section */}
-
-       {/* Left Section */}
-
-<div className="hidden md:flex bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white p-12 flex-col justify-center">
+        <div className="hidden md:flex bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white p-12 flex-col justify-center rounded-l-2xl">
 
   <h1 className="text-4xl font-bold">
     HireMate AI
@@ -59,7 +62,7 @@ export default function Signup() {
 
   <div className="mt-10 space-y-5">
 
-    <div className="flex items-center gap-3">
+    <div className="flex items-start gap-3">
       <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-sm font-bold">
         ✓
       </div>
@@ -68,7 +71,7 @@ export default function Signup() {
       </span>
     </div>
 
-    <div className="flex items-center gap-3">
+    <div className="flex items-start gap-3">
       <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-sm font-bold">
         ✓
       </div>
@@ -77,7 +80,7 @@ export default function Signup() {
       </span>
     </div>
 
-    <div className="flex items-center gap-3">
+    <div className="flex items-start gap-3">
       <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-sm font-bold">
         ✓
       </div>
@@ -86,7 +89,7 @@ export default function Signup() {
       </span>
     </div>
 
-    <div className="flex items-center gap-3">
+    <div className="flex items-start gap-3">
       <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-sm font-bold">
         ✓
       </div>
@@ -95,7 +98,7 @@ export default function Signup() {
       </span>
     </div>
 
-    <div className="flex items-center gap-3">
+    <div className="flex items-start gap-3">
       <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-sm font-bold">
         ✓
       </div>
@@ -106,23 +109,21 @@ export default function Signup() {
 
   </div>
 
-</div>
+        </div>
 
-        {/* Right Section */}
+        <div className="p-6">
 
-        <div className="p-10">
-
-          <h2 className="text-3xl font-bold text-gray-800">
-            Create Account
+          <h2 className="text-2xl font-semibold text-gray-800">
+            Create account
           </h2>
 
-          <p className="text-gray-500 mt-2">
-            Join HireMate to manage your placement journey.
+          <p className="text-gray-500 mt-1 text-sm">
+            Manage your placement journey.
           </p>
 
           <form
             onSubmit={handleSubmit}
-            className="mt-8 space-y-5"
+            className="mt-6 space-y-4"
           >
 
             {error && (
@@ -165,6 +166,45 @@ export default function Signup() {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
+                Branch
+              </label>
+
+              <input
+                type="text"
+                name="branch"
+                value={form.branch}
+                onChange={handleChange}
+                placeholder="ECE"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Current Semester
+              </label>
+
+              <select
+                name="semester"
+                value={form.semester}
+                onChange={handleChange}
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+                required
+              >
+                <option value="">Select semester</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 Password
               </label>
 
@@ -181,9 +221,9 @@ export default function Signup() {
 
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+              className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
             >
-              Create Account
+              Create account
             </button>
 
           </form>
