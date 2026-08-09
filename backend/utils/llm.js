@@ -1,6 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 
-  const MODEL = "gemini-3.6-flash";
+  //const MODEL = "gemini-3.6-flash";
+  const MODEL = "gemini-3.1-flash-lite";
 
 let ai = null;
 const getClient = () => {

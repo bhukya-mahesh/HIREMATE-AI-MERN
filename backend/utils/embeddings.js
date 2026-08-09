@@ -1,6 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 
-//const EMBED_MODEL = "model: gemini-embedding-001";
+
 const EMBED_MODEL = "gemini-embedding-001";
 
 let ai = null;
