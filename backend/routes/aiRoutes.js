@@ -25,7 +25,8 @@ router.post(
   analyzeResume
 );
 
-router.post("/roadmap", generateRoadmap);
+
+router.post("/applications/:id/roadmap", generateRoadmap);
 
 router.get("/mentor-message", getMentorMessage);
 
