@@ -22,7 +22,10 @@ HireMate is a MERN-based placement preparation platform that helps students mana
 - Personalized 7-day preparation roadmap with task suggestions and progress cues
 - AI mentor guidance with preparation advice and interview readiness prompts
 - Study module for uploading books and asking AI questions based on the book content
+- Mock OA: AI-generated mock assessments with instant scoring and detailed feedback
 - PDF handling for resumes, job descriptions, and study materials
+
+
 
 ### Why HireMate?
 - Designed for students and early-career professionals preparing for placements
