@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard.jsx";
 import Profile from "./pages/Profile.jsx";
 import PreparationModules from "./pages/PreparationModules.jsx";
 import StudyModule from "./pages/StudyModule.jsx";
+import MockOAPage from "./pages/MockOAPage.jsx";
 
 const isAuthed = () => !!localStorage.getItem("token");
 
@@ -44,6 +45,14 @@ export default function App() {
         element={
           <Private>
             <StudyModule />
+          </Private>
+        }
+      />
+       <Route
+        path="/mockoa"
+        element={
+          <Private>
+            <MockOAPage />
           </Private>
         }
       />

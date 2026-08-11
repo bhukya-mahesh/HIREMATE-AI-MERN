@@ -45,4 +45,5 @@ export const askForText = async (systemPrompt, userPrompt) => {
     }
   });
   return response.text.trim();
-};
+
+}; 
