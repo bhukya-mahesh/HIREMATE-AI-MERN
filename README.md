@@ -32,6 +32,20 @@ HireMate is a MERN-based placement preparation platform that helps students mana
 - Centralizes application tracking, preparation planning, and learning support
 - Uses AI to reduce manual resume review and job matching guesswork
 - Helps keep preparation organized across applications, interviews, and study goals
+### ScreenShots 
+<img width="1857" height="912" alt="Screenshot 2026-08-11 153840" src="https://github.com/user-attachments/assets/eaf439ef-9eba-498a-81dc-9b24b346a9b4" />
+<img width="1900" height="976" alt="Screenshot 2026-08-11 152947" src="https://github.com/user-attachments/assets/645a8d0a-1f57-411a-8e1d-0cb783ff39b0" />
+<img width="1918" height="890" alt="Screenshot 2026-08-11 153023" src="https://github.com/user-attachments/assets/456ae9a6-b625-4810-abb2-62c24f1e9b9c" />
+<img width="1907" height="957" alt="Screenshot 2026-08-11 153046" src="https://github.com/user-attachments/assets/644ebb6d-3c3a-42c0-8f7b-8715d641b12a" />
+<img width="1001" height="882" alt="Screenshot 2026-08-11 153113" src="https://github.com/user-attachments/assets/22f3fe23-d736-49b4-8e34-07e0d515014c" />
+<img width="1902" height="900" alt="Screenshot 2026-08-11 153137" src="https://github.com/user-attachments/assets/29d580a7-4ac2-45a1-8427-05f716fa7529" />
+<img width="1912" height="885" alt="Screenshot 2026-08-11 153151" src="https://github.com/user-attachments/assets/831b73be-499f-40e7-9e3d-4a56ab3e2a5f" />
+<img width="1917" height="921" alt="Screenshot 2026-08-11 153207" src="https://github.com/user-attachments/assets/5d42728d-6b4d-4260-badf-9bc9414955d6" />
+<img width="1916" height="925" alt="Screenshot 2026-08-11 153221" src="https://github.com/user-attachments/assets/e5112598-b62f-48c1-9850-b978df7a84b2" />
+<img width="1918" height="937" alt="Screenshot 2026-08-11 153301" src="https://github.com/user-attachments/assets/3c2c58b9-d960-4a11-a8ef-32d931e62bec" />
+<img width="1915" height="925" alt="Screenshot 2026-08-11 153320" src="https://github.com/user-attachments/assets/985769cd-c1fe-4ad0-8683-c47d2c14aa18" />
+<img width="1906" height="482" alt="Screenshot 2026-08-11 153416" src="https://github.com/user-attachments/assets/1586e35d-4474-41e0-86f7-e2a797abe851" />
+<img width="1907" height="882" alt="Screenshot 2026-08-11 153819" src="https://github.com/user-attachments/assets/9098912c-1f64-452e-855b-24ef7a8ae1f9" />
 
 ### Tech stack
 - Frontend: React, Vite, Tailwind CSS, React Router, Axios
