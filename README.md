@@ -4,7 +4,7 @@ HireMate is a MERN-based placement preparation platform that helps students mana
 
 ## Live Demo
 
-- Web app: https://hiremate-ai-mern-bssg.vercel.app/
+- Web app: https://hiremate-ai-mern.vercel.app/
 
 ## Live Backend
 
