@@ -32,7 +32,7 @@ export default function App() {
           </Private>
         }
       />
-            <Route
+        <Route
         path="/preparation"
         element={
           <Private>

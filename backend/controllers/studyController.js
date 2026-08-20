@@ -110,7 +110,14 @@ export const askBookController = async (req, res) => {
       `You are a study tutor answering a student's question about their uploaded book.
        Answer using ONLY the provided source excerpts. If the answer isn't in the sources,
        say so honestly rather than guessing. Keep the answer clear and under 200 words.
-       Mention which source(s) you used by their title where relevant.`,
+       Mention which source(s) you used by their title where relevant.
+
+       Format the answer as clean Markdown:
+       - Use short bold headings for the answer and relevant sections such as Definition, Explanation,
+         Example, Steps, or Key Takeaway.
+       - Separate every heading, paragraph, and list with one blank line.
+       - Use concise paragraphs, bullet points, or numbered steps where useful.
+       - Do not use decorative symbols, emojis, repeated punctuation, or a dense block of text.`,
       `Question: ${question}\n\nSource excerpts:\n${context}`
     );
 
@@ -147,7 +154,14 @@ export const explainModuleController = async (req, res) => {
     const explanation = await askForText(
       `You are a patient tutor teaching from a textbook. Explain the given section clearly,
        as if teaching a student for the first time. Use simple language, a short example if
-       relevant, and end with a one-line takeaway. Keep it focused — 150-250 words.`,
+       relevant, and end with a one-line takeaway. Keep it focused — 150-250 words.
+
+       Format the explanation as clean Markdown:
+       - Use clear, short bold headings for sections such as Concept, How It Works, Example, and Key Takeaway.
+       - Separate every heading, paragraph, and list with one blank line.
+       - Use bullet points or numbered steps where appropriate.
+       - Keep the final takeaway under a bold Key Takeaway heading.
+       - Do not use decorative symbols, emojis, repeated punctuation, or one dense block of text.`,
       `Topic: ${module.title}\n\nSection text:\n${module.sourceExcerpt.slice(0, 5000)}`
     );
 
