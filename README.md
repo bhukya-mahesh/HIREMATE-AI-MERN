@@ -40,11 +40,15 @@ HireMate is a MERN-based placement preparation platform that helps students mana
 <img width="1001" height="882" alt="Screenshot 2026-08-11 153113" src="https://github.com/user-attachments/assets/22f3fe23-d736-49b4-8e34-07e0d515014c" />
 <img width="1902" height="900" alt="Screenshot 2026-08-11 153137" src="https://github.com/user-attachments/assets/29d580a7-4ac2-45a1-8427-05f716fa7529" />
 <img width="1912" height="885" alt="Screenshot 2026-08-11 153151" src="https://github.com/user-attachments/assets/831b73be-499f-40e7-9e3d-4a56ab3e2a5f" />
-<img width="1917" height="921" alt="Screenshot 2026-08-11 153207" src="https://github.com/user-attachments/assets/5d42728d-6b4d-4260-badf-9bc9414955d6" />
+
+<img width="1908" height="892" alt="Screenshot 2026-08-20 174648" src="https://github.com/user-attachments/assets/1ef20ef1-100b-4277-9619-59ce13d1cf77" />
 <img width="1916" height="925" alt="Screenshot 2026-08-11 153221" src="https://github.com/user-attachments/assets/e5112598-b62f-48c1-9850-b978df7a84b2" />
+<img width="1918" height="770" alt="Screenshot 2026-08-20 153232" src="https://github.com/user-attachments/assets/766b5792-4e5d-41ff-8df2-91b8e0d959ca" />
+<img width="1907" height="853" alt="Screenshot 2026-08-20 153254" src="https://github.com/user-attachments/assets/07e39200-3c0b-4697-8f03-2fb088acbc6d" />
+<img width="1908" height="798" alt="Screenshot 2026-08-20 153316" src="https://github.com/user-attachments/assets/2ce84856-6ca9-48f5-92ff-8e8593fb80ab" />
+<img width="1918" height="846" alt="Screenshot 2026-08-20 153339" src="https://github.com/user-attachments/assets/a55fa868-1dba-429b-b30c-dd05074b1f2f" />
 <img width="1918" height="937" alt="Screenshot 2026-08-11 153301" src="https://github.com/user-attachments/assets/3c2c58b9-d960-4a11-a8ef-32d931e62bec" />
 <img width="1915" height="925" alt="Screenshot 2026-08-11 153320" src="https://github.com/user-attachments/assets/985769cd-c1fe-4ad0-8683-c47d2c14aa18" />
-<img width="1906" height="482" alt="Screenshot 2026-08-11 153416" src="https://github.com/user-attachments/assets/1586e35d-4474-41e0-86f7-e2a797abe851" />
 <img width="1907" height="882" alt="Screenshot 2026-08-11 153819" src="https://github.com/user-attachments/assets/9098912c-1f64-452e-855b-24ef7a8ae1f9" />
 
 ### Tech stack
