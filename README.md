@@ -50,6 +50,10 @@ HireMate is a MERN-based placement preparation platform that helps students mana
 <img width="1918" height="937" alt="Screenshot 2026-08-11 153301" src="https://github.com/user-attachments/assets/3c2c58b9-d960-4a11-a8ef-32d931e62bec" />
 <img width="1915" height="925" alt="Screenshot 2026-08-11 153320" src="https://github.com/user-attachments/assets/985769cd-c1fe-4ad0-8683-c47d2c14aa18" />
 <img width="1907" height="882" alt="Screenshot 2026-08-11 153819" src="https://github.com/user-attachments/assets/9098912c-1f64-452e-855b-24ef7a8ae1f9" />
+<img width="1875" height="962" alt="Screenshot 2026-09-10 111801" src="https://github.com/user-attachments/assets/da6769c3-777b-4b88-964c-69f87d09b791" />
+<img width="1665" height="842" alt="Screenshot 2026-09-10 111925" src="https://github.com/user-attachments/assets/d50b4687-d244-46ec-affe-46c8acaceec5" />
+
+
 
 ### Tech stack
 - Frontend: React, Vite, Tailwind CSS, React Router, Axios
