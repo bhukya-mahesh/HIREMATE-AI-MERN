@@ -4,6 +4,7 @@ import {
   BookOpen,
   GraduationCap,
   ClipboardCheck,
+  Building2,
   LogOut,
 } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -68,6 +69,10 @@ export default function Sidebar() {
         <NavLink to="/mockoa" className={linkClass}>
           <ClipboardCheck size={18} />
           Mock OA
+        </NavLink>
+        <NavLink to="/visits" className={linkClass}>
+         <Building2 size={18} />
+            Campus Visits
         </NavLink>
 
       </nav>
