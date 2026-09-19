@@ -23,9 +23,17 @@ HireMate is a MERN-based placement preparation platform that helps students mana
 - AI mentor guidance with preparation advice and interview readiness prompts
 - Study module for uploading books and asking AI questions based on the book content
 - Mock OA: AI-generated mock assessments with instant scoring and detailed feedback
+- Campus visit tracker for tracking company visits, recruitment rounds, and placement updates
+- AI Prep Agent for personalized interview/test guidance based on recent application and preparation history
 - PDF handling for resumes, job descriptions, and study materials
 
-
+### Recent additions
+Over the last few weeks, the platform has expanded beyond the original application tracker to include a more complete placement preparation workflow:
+- Company visit tracking and historical placement insights
+- Mock online assessment generation with answer evaluation and score summaries
+- AI-driven prep assistant that responds to the student’s current preparation context
+- Stronger study and revision flow for uploaded books and course material
+- More integrated dashboard experiences across applications, campus drives, and AI guidance
 
 ### Why HireMate?
 - Designed for students and early-career professionals preparing for placements
@@ -68,28 +76,39 @@ HireMate/
 │   ├── config/
 │   │   └── db.js
 │   ├── controllers/
+│   │   ├── agentController.js
 │   │   ├── aiController.js
 │   │   ├── applicationController.js
 │   │   ├── authController.js
+│   │   ├── companyVisitController.js
+│   │   ├── mockOAController.js
 │   │   └── studyController.js
 │   ├── middleware/
 │   │   ├── auth.js
 │   │   ├── upload.js
 │   │   ├── uploadBook.js
-│   │   └── uploadResume.js
+│   │   ├── uploadResume.js
+│   │   └── uploadVisits.js
 │   ├── models/
 │   │   ├── Application.js
 │   │   ├── Book.js
+│   │   ├── CompanyVisit.js
+│   │   ├── MockOA.js
 │   │   └── User.js
 │   ├── routes/
+│   │   ├── agentRoutes.js
 │   │   ├── aiRoutes.js
 │   │   ├── applicationRoutes.js
 │   │   ├── authRoutes.js
+│   │   ├── companyVisitRoutes.js
+│   │   ├── mockOA.js
 │   │   └── studyRoutes.js
 │   ├── uploads/
 │   │   ├── books/
-│   │   └── resumes/
+│   │   ├── resumes/
+│   │   └── visits/
 │   ├── utils/
+│   │   ├── agentTools.js
 │   │   ├── embeddings.js
 │   │   ├── llm.js
 │   │   ├── pdfExtractor.js
@@ -98,7 +117,6 @@ HireMate/
 │   ├── package.json
 │   └── server.js
 ├── frontend/
-│   ├── public/
 │   ├── src/
 │   │   ├── api/
 │   │   │   └── axios.js
@@ -107,17 +125,22 @@ HireMate/
 │   │   ├── App.jsx
 │   │   ├── index.css
 │   │   └── main.jsx
+│   ├── index.html
 │   ├── package.json
+│   ├── postcss.config.js
 │   ├── tailwind.config.js
 │   ├── vite.config.js
 │   └── vercel.json
-└── README.md
+├── LICENSE
+├── README.md
+└── .gitignore
 ```
 
 Key areas:
 - Backend logic and API routes live under [backend](backend)
 - Frontend pages and reusable UI components live under [frontend/src](frontend/src)
-- The AI and study features are implemented in [backend/controllers/aiController.js](backend/controllers/aiController.js) and [backend/controllers/studyController.js](backend/controllers/studyController.js)
+- The AI preparation and assessment logic is spread across [backend/controllers/aiController.js](backend/controllers/aiController.js), [backend/controllers/agentController.js](backend/controllers/agentController.js), and [backend/controllers/mockOAController.js](backend/controllers/mockOAController.js)
+- Campus hiring and placement tracking are managed under [backend/controllers/companyVisitController.js](backend/controllers/companyVisitController.js) and [backend/models/CompanyVisit.js](backend/models/CompanyVisit.js)
 
 ## Local development
 

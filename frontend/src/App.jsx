@@ -7,6 +7,7 @@ import PreparationModules from "./pages/PreparationModules.jsx";
 import StudyModule from "./pages/StudyModule.jsx";
 import MockOAPage from "./pages/MockOAPage.jsx";
 import CampusVisits from "./pages/CampusVisits.jsx";
+import PrepAgent from "./pages/PrepAgent.jsx";
 
 const isAuthed = () => !!localStorage.getItem("token");
 
@@ -65,6 +66,14 @@ export default function App() {
         </Private>
       }
       />
+      <Route
+  path="/agent"
+  element={
+    <Private>
+      <PrepAgent />
+    </Private>
+  }
+/>
     </Routes>
   );
 }

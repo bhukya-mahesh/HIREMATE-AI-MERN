@@ -46,4 +46,17 @@ export const askForText = async (systemPrompt, userPrompt) => {
   });
   return response.text.trim();
 
-}; 
+};
+
+export const askWithTools = async (systemPrompt, contents, functionDeclarations) => {
+  const response = await getClient().models.generateContent({
+    model: MODEL,
+    contents,
+    config: {
+      systemInstruction: systemPrompt,
+      temperature: 0.2,
+      tools: [{ functionDeclarations }]
+    }
+  });
+  return response;
+};

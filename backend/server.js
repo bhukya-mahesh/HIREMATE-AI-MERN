@@ -8,6 +8,7 @@ import aiRoutes from "./routes/aiRoutes.js";
 import studyRoutes from "./routes/studyRoutes.js";
 import mockOARoutes from "./routes/mockOA.js";
 import companyVisitRoutes from "./routes/companyVisitRoutes.js";
+import agentRoutes from "./routes/agentRoutes.js";
 import { startReminderCron } from "./utils/reminderCron.js";
 
 connectDB();
@@ -24,6 +25,7 @@ app.use("/api/ai", aiRoutes);
 app.use("/api/study", studyRoutes);
 app.use("/api/mockoa", mockOARoutes);
 app.use("/api/visits", companyVisitRoutes);
+app.use("/api/agent", agentRoutes);
 
 app.get("/", (req, res) => res.send("HireMate API is running..."));
 

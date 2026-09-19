@@ -5,6 +5,7 @@ import {
   GraduationCap,
   ClipboardCheck,
   Building2,
+  Sparkles,
   LogOut,
 } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -55,6 +56,10 @@ export default function Sidebar() {
           <User size={18} />
           Profile
         </NavLink>
+        <NavLink to="/agent" className={linkClass}>
+          <Sparkles size={18} />
+              Prep Agent
+          </NavLink>
 
         <NavLink to="/preparation" className={linkClass}>
           <GraduationCap size={18} />
